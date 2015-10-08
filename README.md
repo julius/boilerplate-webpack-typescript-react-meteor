@@ -28,7 +28,7 @@ npm run dev
 ```
 
 Open this up in your browser:
-[http://localhost:8080/webpack-dev-server/index.html](http://localhost:8080/webpack-dev-server/index.html)
+[http://localhost:3000/](http://localhost:3000/)
 
 Code is in the **src** folder.
 Browser will refresh automatically when you change code.
