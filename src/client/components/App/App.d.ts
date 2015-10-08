@@ -1,0 +1,4 @@
+
+interface TemplateStatic {
+    loginButtons: any;
+}

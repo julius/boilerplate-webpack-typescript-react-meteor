@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#
+# Script starts meteor server
+#
+# Compiles server and client code into meteor-dist folder
+# And recompiles when changes occur.
+#
+
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
+BASE_PATH=${SCRIPTPATH}/../../
+SRC_DIR=${BASE_PATH}/src
+LIB_DIR=${BASE_PATH}/webpack-meteor/lib
+WEBPACK_DIR=${BASE_PATH}/webpack-meteor/webpack-config
+METEOR_DIR=${BASE_PATH}/webpack-meteor/meteor-dist
+METEOR_SETTINGS_DIR=${BASE_PATH}/webpack-meteor/meteor-settings
+
+[ -f ${METEOR_DIR}/client/client.bundle.js ] && rm ${METEOR_DIR}/client/client.bundle.js
+[ -f ${METEOR_DIR}/server/server.bundle.js ] && rm ${METEOR_DIR}/server/server.bundle.js
+
+
+(
+    cd ${WEBPACK_DIR}
+    ${BASE_PATH}/node_modules/webpack/bin/webpack.js --config webpack.config.client.dev.js --progress --colors --watch &
+    ${BASE_PATH}/node_modules/webpack/bin/webpack.js --config webpack.config.server.dev.js --progress --colors --watch &
+
+    cd ${METEOR_DIR}
+    ln -sf ${SRC_DIR}/client/index.html index.html
+
+    if [[ $1 == "--debug" ]]
+    then
+        export NODE_OPTIONS='--debug=5858'
+    fi
+
+    meteor --settings ${METEOR_SETTINGS_DIR}/devel.json &
+) | cat
+

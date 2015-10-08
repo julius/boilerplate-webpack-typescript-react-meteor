@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#
+# Script compiles server and client code into a meteor distribution, ready for deployment
+#
+# Will create the /{ProjectRoot}/dist
+#
+
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
+BASE_PATH=${SCRIPTPATH}/../../
+DIST_DIR=${BASE_PATH}/dist
+WEBPACK_DIR=${BASE_PATH}/webpack-meteor/webpack-config
+METEOR_DIR=${BASE_PATH}/webpack-meteor/meteor-dist
+
+[ -f $METEOR_DIR/client/loadClientBundle.html ] && rm $METEOR_DIR/client/loadClientBundle.html
+[ -f $METEOR_DIR/server/require-server-bundle.js ] && rm $METEOR_DIR/server/require-server-bundle.js
+
+cd ${WEBPACK_DIR}
+env NODE_ENV=production ${BASE_PATH}/node_modules/webpack/bin/webpack.js --config webpack.config.client.prod.js --progress --colors
+env NODE_ENV=production ${BASE_PATH}/node_modules/webpack/bin/webpack.js --config webpack.config.server.prod.js --progress --colors
+
+cd ${METEOR_DIR}
+rm -rf ${DIST_DIR}
+METEOR_SETTINGS=$(cat ../meteor-settings/prod.json) && meteor build ${DIST_DIR}

@@ -1,0 +1,55 @@
+{
+  "name": "boilerplate-webpack-typescript-react-meteor",
+  "version": "0.1.0",
+  "description": "Boilerplate to setup a development environment with Meteor, React, Typescript and Webpack.",
+  "repository": "https://www.github.com/julius/boilerplate-webpack-typescript-react-meteor",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-core": "^5.8.22",
+    "babel-eslint": "^4.0.5",
+    "babel-loader": "^5.1.2",
+    "babel-plugin-react-transform": "^1.0.5",
+    "core-js": "^1.0.0",
+    "css-loader": "^0.15.3",
+    "eslint-config-airbnb": "0.0.7",
+    "eslint-plugin-react": "^3.2.2",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "node-libs-browser": "^0.5.2",
+    "on-build-webpack": "^0.1.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.0",
+    "redbox-react": "^1.0.1",
+    "regenerator": "^0.8.36",
+    "source-map-support": "^0.3.2",
+    "style-loader": "^0.12.3",
+    "ts-loader": "^0.5.5",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "classnames": "^2.1.3",
+    "file-loader": "^0.8.4",
+    "font-awesome": "^4.4.0",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.0",
+    "node-sass": "^3.3.3",
+    "react": "^0.13.3",
+    "react-mixin": "^2.0.1",
+    "sass-loader": "^3.0.0",
+    "typescript": "^1.6.2",
+    "url-loader": "^0.5.6"
+  },
+  "scripts": {
+    "dev": "./webpack-meteor/scripts/dev",
+    "debug": "./webpack-meteor/scripts/dev --debug",
+    "build": "./webpack-meteor/scripts/predeploy",
+    "meteor": "./webpack-meteor/scripts/met"
+  },
+  "author": {
+    "name": "Julius Eckert",
+    "email": "eckert.julius@gmail.com"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
+BASE_PATH=${SCRIPTPATH}/../../
+METEOR_DIR=${BASE_PATH}/webpack-meteor/meteor-dist
+
+cd ${METEOR_DIR} && meteor $@

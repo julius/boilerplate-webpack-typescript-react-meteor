@@ -1,0 +1,33 @@
+{
+  "version": "v4",
+  "repo": "julius/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "jquery/jquery.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "react/react-global.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "react/react.d.ts": {
+      "commit": "dc67edb2c350c446aa8bb3a81e270cd7afbdbaaf"
+    },
+    "react-router/react-router.d.ts": {
+      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    },
+    "ts-loader/ts-loader-require.d.ts": {
+      "commit": "328b3b7e328da262e9375c2d95104c397970e107"
+    },
+    "meteor/meteor.d.ts": {
+      "commit": "328b3b7e328da262e9375c2d95104c397970e107"
+    },
+    "meteor/meteor-react.d.ts": {
+      "commit": "dc67edb2c350c446aa8bb3a81e270cd7afbdbaaf"
+    },
+    "react-mixin/react-mixin.d.ts": {
+      "commit": "dc67edb2c350c446aa8bb3a81e270cd7afbdbaaf"
+    }
+  }
+}

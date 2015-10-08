@@ -1,0 +1,7 @@
+{
+  "public": {
+    "env": "DEVEL",
+    "bada": "boing"
+  },
+  "secret": "some-secret"
+}

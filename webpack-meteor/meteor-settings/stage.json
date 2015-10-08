@@ -1,0 +1,7 @@
+{
+  "public": {
+    "env": "STAGE",
+    "bada": "boing"
+  },
+  "secret": "some-secret"
+}
